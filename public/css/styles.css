@@ -1,0 +1,204 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.header_logo {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header_nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header_nav li {
+    margin: 0 10px;
+}
+
+.header_nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.header_nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.header_button {
+    display: flex;
+    align-items: center;
+}
+
+.searchBtn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchBtn:hover {
+    background-color: #777;
+}
+
+.searchBtn svg {
+    fill: #fff;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+}
+
+/* Author section */
+.author {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.author_heading {
+    font-size: 2em;
+    margin: 0;
+}
+
+.author_body {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Image styling */
+.hijabi-image {
+    max-width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Articles section */
+.articles {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.articles_heading {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.article-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.article-ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.article-ul a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    flex-grow: 1;
+}
+
+.article-ul a:hover {
+    color: #007BFF;
+}
+
+.article-list_date {
+    font-size: 0.9em;
+    color: #777;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+/* Pagination link */
+.pagination {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination:hover {
+    background-color: #0056b3;
+}
+
+.searchBar {
+    background-color: #f8f8f8; /* Light grey background */
+    padding: 10px 0; /* Padding for top and bottom */
+    border-bottom: 1px solid #ddd; /* Light grey border at the bottom */
+    visibility: hidden;
+    transform: translateY(-100px);
+}
+
+.searchBar .container {
+    display: flex;
+    justify-content: space-between; /* Space between form and close button */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Padding for left and right */
+}
+
+.searchBar .search_form {
+    flex-grow: 1; /* Allow the form to grow */
+    display: flex;
+}
+
+.searchBar #searchInput {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+.searchBar #searchClose {
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px; /* Padding for the close button */
+    font-size: 16px; /* Font size */
+    color: #333; /* Dark grey color */
+}
+
+.searchBar #searchClose:hover {
+    color: #000; /* Black color on hover */
+}
+
+
