@@ -108,18 +108,26 @@ router.post('/add-post', authMiddleware, asyncHandler(async (req, res) => {
         res.redirect('/dashboard');
     } catch (error) {
         console.log(error);
+        res.status(500).json({ message: 'Internal server error.', error: error.message });
     }
 }));
+
 // Route to edit a post
 router.put('/edit-post/:id', authMiddleware, asyncHandler(async (req, res) => {
-    await posts.findByIdAndUpdate(req.params.id, {
-        title: req.body.title,
-        body: req.body.body,
-        updatedAt: Date.now()
-    });
+    try {
+        await posts.findByIdAndUpdate(req.params.id, {
+            title: req.body.title,
+            body: req.body.body,
+            updatedAt: Date.now()
+        });
 
-    res.redirect(`/edit-post/${req.params.id}`);
-}));
+        res.redirect(`/edit-post/${req.params.id}`);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Internal server error.', error: error.message });
+    }
+}))
+
 
 // Route to render edit-post page
 router.get('/edit-post/:id', authMiddleware, asyncHandler(async (req, res) => {
@@ -128,19 +136,36 @@ router.get('/edit-post/:id', authMiddleware, asyncHandler(async (req, res) => {
         description: "Free Node.js user management system"
     };
 
-    const data = await posts.findOne({ _id: req.params.id });
+    try {
+        const data = await posts.findOne({ _id: req.params.id });
+        if (!data) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
 
-    res.render('admin/edit-post', {
-        data,
-        layout: adminLayout,
-        locals
-    });
+        res.render('admin/edit-post', {
+            data,
+            layout: adminLayout,
+            locals
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Internal server error.', error: error.message });
+    }
 }));
 
 // Route to delete a post
 router.delete('/delete-post/:id', authMiddleware, asyncHandler(async (req, res) => {
-    await posts.deleteOne({ _id: req.params.id });
-    res.redirect('/dashboard');
+    try {
+        const result = await posts.deleteOne({ _id: req.params.id });
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+
+        res.redirect('/dashboard');
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Internal server error.', error: error.message });
+    }
 }));
 
 // Route to logout
@@ -149,6 +174,7 @@ router.get('/logout', (req, res) => {
     res.json({ message: 'Logout successful' });
     res.redirect('/');
 });
+
 
 export default router;
 
