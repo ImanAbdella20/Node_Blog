@@ -1,4 +1,3 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,7 +11,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -76,7 +74,6 @@ body {
     margin-left: 5px;
 }
 
-/* Author section */
 .author {
     text-align: center;
     margin-bottom: 20px;
@@ -92,7 +89,6 @@ body {
     color: #555;
 }
 
-/* Image styling */
 .hijabi-image {
     max-width: 100%;
     height: 350px;
@@ -100,7 +96,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Articles section */
 .articles {
     text-align: center;
     width: 100%;
@@ -144,7 +139,6 @@ body {
     white-space: nowrap;
 }
 
-/* Pagination link */
 .pagination {
     display: inline-block;
     margin-top: 20px;
@@ -161,44 +155,42 @@ body {
 }
 
 .searchBar {
-    background-color: #f8f8f8; /* Light grey background */
-    padding: 10px 0; /* Padding for top and bottom */
-    border-bottom: 1px solid #ddd; /* Light grey border at the bottom */
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
     visibility: hidden;
     transform: translateY(-100px);
 }
 
 .searchBar .container {
     display: flex;
-    justify-content: space-between; /* Space between form and close button */
-    align-items: center; /* Center items vertically */
-    max-width: 1200px; /* Maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 0 20px; /* Padding for left and right */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .searchBar .search_form {
-    flex-grow: 1; /* Allow the form to grow */
+    flex-grow: 1;
     display: flex;
 }
 
 .searchBar #searchInput {
-    width: 100%; /* Full width */
-    padding: 10px; /* Padding inside the input */
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 .searchBar #searchClose {
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 10px; /* Padding for the close button */
-    font-size: 16px; /* Font size */
-    color: #333; /* Dark grey color */
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
 }
 
 .searchBar #searchClose:hover {
-    color: #000; /* Black color on hover */
+    color: #000;
 }
-
-
